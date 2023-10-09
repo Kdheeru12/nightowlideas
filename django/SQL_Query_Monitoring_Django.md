@@ -32,6 +32,15 @@ Developers can utilize the `execute_wrapper` function to append custom wrappers 
 
 Execute wrappers are a subpart of the backend[mysql, psogres] connection class `class DatabaseWrapper(BaseDatabaseWrapper):` from where one can create CursorWrapper. 
 
+In the normal Django way, sqlcompilor creates the cursor of the CursorWrapper class, which executes `execute_wrappers` [i.e `execute_wrappers` is a list]
+
+BASIC Flow:
+
+```
+Model > ModelManager > queryset > SQLCOMPILOR [initialises the cursor] > DB-BACKEND-BASE
+```
+
+
 ### Enter CursorWrapper: The Execution Orchestrator
 
 The `CursorWrapper` class manages query execution, invoking functions in `execute_wrappers` sequentially, with the required parameters. This class ensures adherence to specific protocols and logic.
