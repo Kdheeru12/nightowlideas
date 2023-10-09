@@ -115,3 +115,4 @@ class DatabaseLogger:
 For multi-DB setups or read replicas, use `connections["name"]` to instrument a particular database connection. By default, only the default database is instrumented.
 
 ---
+For more Ref : https://docs.djangoproject.com/en/4.2/topics/db/instrumentation/
