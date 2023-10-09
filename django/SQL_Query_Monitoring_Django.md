@@ -30,6 +30,8 @@ To monitor and manipulate SQL queries during execution, the `execute_wrappers` a
 
 Developers can utilize the `execute_wrapper` function to append custom wrappers for advanced capabilities such as logging and performance monitoring.
 
+Execute wrappers are a subpart of the backend[mysql, psogres] connection class `class DatabaseWrapper(BaseDatabaseWrapper):` from where one can create CursorWrapper. 
+
 ### Enter CursorWrapper: The Execution Orchestrator
 
 The `CursorWrapper` class manages query execution, invoking functions in `execute_wrappers` sequentially, with the required parameters. This class ensures adherence to specific protocols and logic.
